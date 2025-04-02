@@ -1,0 +1,14 @@
+{
+  "rooms": [
+    {
+      "roomId": "R001",
+      "name": "Phòng VIP"
+     
+    },
+    {
+      "roomId": "R002",
+      "name": "Phòng thường"
+    }
+    ]
+}
+

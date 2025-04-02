@@ -122,10 +122,11 @@ def main():
             player = User(**user_snake_case)
             
             while True:
-                print("Đăng nhập thành công!!!")
-                print("1. Chơi game")
-                print("2. Nạp tiền")
-                print("3. Thoát")
+                print("---- CHAO MUNG BAN DEN VOI THE GIOI GAME----")
+                print("1. Tong thoi gian ban muon choi game")
+                print("2. kiem tra so tien trong tai khoan")
+                print("3. Nap tien vao tai khoan")
+                print("4. Thoát")
                 player_choice = input("Lựa chọn: ")
                 if player_choice == "1":
                     try:
@@ -134,12 +135,14 @@ def main():
                     except ValueError:
                         print("Vui lòng nhập một số nguyên hợp lệ!")
                 elif player_choice == "2":
+                    print(f"Số tiền trong tài khoản: {player.balance} VND")
+                elif player_choice == "3":
                     try:
                         amount = int(input("Nhập số tiền muốn nạp: "))
                         player.deposit_money(amount)
                     except ValueError:
                         print("Vui lòng nhập một số nguyên hợp lệ!")
-                elif player_choice == "3":
+                elif player_choice == "4":
                     break
                 else:
                     print("Lựa chọn không hợp lệ!")

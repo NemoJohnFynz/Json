@@ -106,7 +106,10 @@ def main():
             if not user:
                 print("Người chơi không tồn tại!")
                 continue
-            
+            password = input("Nhập mật khẩu: ")
+            if user["password"] != password:
+                print("Mật khẩu không chính xác!")
+                continue
             # Chuyển đổi camelCase sang snake_case
             user_snake_case = {
                 "user_id": user["userId"],
@@ -119,6 +122,7 @@ def main():
             player = User(**user_snake_case)
             
             while True:
+                print("Đăng nhập thành công!!!")
                 print("1. Chơi game")
                 print("2. Nạp tiền")
                 print("3. Thoát")

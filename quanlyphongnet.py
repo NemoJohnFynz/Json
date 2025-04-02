@@ -84,6 +84,9 @@ class Admin(User):
 def main():
     users = load_data("user.json")
     rooms = load_data("room.json")
+    trasitions = load_data("trasition.json")
+    computers = load_data("computer.json")
+    violations = load_data("violation.json")
     
     if not users:
         print("Không có dữ liệu người chơi!")

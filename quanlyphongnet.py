@@ -170,8 +170,17 @@ def main():
                 "role": user["role"]
             }
             employee = Employee(**employee)
-            print(f"Chào mừng nhân viên {employee.full_name}!")
-
+            while True:
+                print("----XIN CHAO NHAN VIEN {employee.full_name}----")
+                print("1. Bao cao tinh trang may tinh")
+                print("2. Bao cao vi pham")
+                print("3. Thoat")
+                employee_choice = input("Lựa chọn: ")
+                # elif player_choice == "4":
+                #     break
+                # else:
+                #     print("Lựa chọn không hợp lệ!")
+                
         elif choice == "3":
             username = input("Nhập tên đăng nhập: ")
             user = next((u for u in users if u.get("username") == username and u.get("role") == "admin"), None)

@@ -2,10 +2,10 @@
     "users": [
     {
       "userId": "U001",
-      "fullName": "Nguyễn Văn A",
-      "username": "nguyenvana",
-      "password": "hashed_password",
-      "balance": 120000,
+      "fullName": "Uchiha Nemo",
+      "username": "uchihanemo",
+      "password": "nemo1234",
+      "balance": 9999999999999999999999999999,
       "role": "player"
     },
     {

@@ -1,14 +1,17 @@
 import json
 from datetime import datetime
 
+# Hàm đọc dữ liệu từ file JSON
 def load_data(filename):
     try:
         with open(filename, 'r', encoding='utf-8') as file:
-            return json.load(file)
-    except (FileNotFoundError, json.JSONDecodeError):
+            data = json.load(file)
+            return data.get("users", [])  # Trả về danh sách người dùng từ key "users"
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        print(f"Không thể đọc dữ liệu từ {filename}: {e}")
         return []
 
-
+# Hàm lưu dữ liệu vào file JSON
 def save_data(filename, data):
     with open(filename, 'w', encoding='utf-8') as file:
         json.dump(data, file, indent=4, ensure_ascii=False)
@@ -73,8 +76,12 @@ class Admin:
 
 # Chạy chương trình chính
 def main():
+    # Load dữ liệu từ file JSON
     users = load_data("user.json")
     rooms = load_data("room.json")
+    trasitions = load_data("trasition.json")
+    computers = load_data("computer.json")
+    violations = load_data("violation.json")
     
     while True:
         print("--- HỆ THỐNG QUẢN LÝ PHÒNG NET ---")
@@ -85,17 +92,21 @@ def main():
         choice = input("Lựa chọn: ")
         
         if choice == "1":
+            # Đăng nhập người chơi
             username = input("Nhập tên đăng nhập: ")
             user = next((u for u in users if u["username"] == username), None)
             if not user:
                 print("Người chơi không tồn tại!")
                 continue
-            player = User(**user)
+            # Khởi tạo đối tượng User từ thông tin người chơi
+            player = User(user["userId"], user["fullName"], user["username"], user["password"], user["balance"])
+            
             while True:
                 print("1. Chơi game")
                 print("2. Nạp tiền")
                 print("3. Thoát")
                 player_choice = input("Lựa chọn: ")
+                
                 if player_choice == "1":
                     minutes = int(input("Nhập số phút chơi: "))
                     player.play_game(minutes)

@@ -4,8 +4,18 @@ from datetime import datetime
 def load_data(filename):
     try:
         with open(filename, 'r', encoding='utf-8') as file:
-            return json.load(file)
+            data = json.load(file)
+            if isinstance(data, dict) and "users" in data and isinstance(data["users"], list):
+                return data["users"]
+            if isinstance(data, dict) and "rooms" in data and isinstance(data["rooms"], list):
+                return data["rooms"]
+            elif isinstance(data, list):
+                return data
+            else:
+                print(f"Dữ liệu trong {filename} không hợp lệ!")
+                return []
     except (FileNotFoundError, json.JSONDecodeError):
+        print(f"Không thể tải dữ liệu từ {filename}!")
         return []
 
 
@@ -32,12 +42,13 @@ class Room:
 
 # Lớp quản lý người chơi
 class User:
-    def __init__(self, user_id, full_name, username, password, balance):
+    def __init__(self, user_id, full_name, username, password, balance=0, role="player"):
         self.user_id = user_id
         self.full_name = full_name
         self.username = username
         self.password = password
         self.balance = balance
+        self.role = role
 
     def play_game(self, minutes):
         cost = minutes * 1000
@@ -51,22 +62,20 @@ class User:
         self.balance += amount
         print(f"Nạp thành công {amount} VND. Số dư hiện tại: {self.balance} VND")
 
-class Employee:
-    def __init__(self, user_id, full_name, username, password):
-        self.user_id = user_id
-        self.full_name = full_name
-        self.username = username
-        self.password = password
+# Lớp quản lý nhân viên
+class Employee(User):
+    def __init__(self, user_id, full_name, username, password, address, phone, role="employee"):
+        super().__init__(user_id, full_name, username, password, role=role)
+        self.address = address
+        self.phone = phone
 
     def report_violation(self, user, reason):
         print(f"Báo cáo vi phạm: {user.full_name} - Lý do: {reason}")
 
-class Admin:
-    def __init__(self, user_id, full_name, username, password):
-        self.user_id = user_id
-        self.full_name = full_name
-        self.username = username
-        self.password = password
+# Lớp quản lý quản trị viên
+class Admin(User):
+    def __init__(self, user_id, full_name, username, password, role="admin"):
+        super().__init__(user_id, full_name, username, password, role=role)
 
     def view_revenue(self):
         print("Tổng doanh thu hôm nay: 500000 VND")
@@ -76,6 +85,13 @@ def main():
     users = load_data("user.json")
     rooms = load_data("room.json")
     
+    if not users:
+        print("Không có dữ liệu người chơi!")
+        return
+    if not rooms:
+        print("Không có dữ liệu phòng!")
+        return
+
     while True:
         print("--- HỆ THỐNG QUẢN LÝ PHÒNG NET ---")
         print("1. Người chơi")
@@ -86,27 +102,64 @@ def main():
         
         if choice == "1":
             username = input("Nhập tên đăng nhập: ")
-            user = next((u for u in users if u["username"] == username), None)
+            user = next((u for u in users if u.get("username") == username and u.get("role") == "player"), None)
             if not user:
                 print("Người chơi không tồn tại!")
                 continue
-            player = User(**user)
+            
+            # Chuyển đổi camelCase sang snake_case
+            user_snake_case = {
+                "user_id": user["userId"],
+                "full_name": user["fullName"],
+                "username": user["username"],
+                "password": user["password"],
+                "balance": user.get("balance", 0),
+                "role": user["role"]
+            }
+            player = User(**user_snake_case)
+            
             while True:
                 print("1. Chơi game")
                 print("2. Nạp tiền")
                 print("3. Thoát")
                 player_choice = input("Lựa chọn: ")
                 if player_choice == "1":
-                    minutes = int(input("Nhập số phút chơi: "))
-                    player.play_game(minutes)
+                    try:
+                        minutes = int(input("Nhập số phút chơi: "))
+                        player.play_game(minutes)
+                    except ValueError:
+                        print("Vui lòng nhập một số nguyên hợp lệ!")
                 elif player_choice == "2":
-                    amount = int(input("Nhập số tiền muốn nạp: "))
-                    player.deposit_money(amount)
+                    try:
+                        amount = int(input("Nhập số tiền muốn nạp: "))
+                        player.deposit_money(amount)
+                    except ValueError:
+                        print("Vui lòng nhập một số nguyên hợp lệ!")
                 elif player_choice == "3":
                     break
                 else:
                     print("Lựa chọn không hợp lệ!")
-            
+        
+        elif choice == "2":
+            username = input("Nhập tên đăng nhập: ")
+            user = next((u for u in users if u.get("username") == username and u.get("role") == "employee"), None)
+            if not user:
+                print("Nhân viên không tồn tại!")
+                continue
+            employee = Employee(**user)
+            print(f"Chào mừng nhân viên {employee.full_name}!")
+            # Add employee-specific functionality here
+
+        elif choice == "3":
+            username = input("Nhập tên đăng nhập: ")
+            user = next((u for u in users if u.get("username") == username and u.get("role") == "admin"), None)
+            if not user:
+                print("Quản trị viên không tồn tại!")
+                continue
+            admin = Admin(**user)
+            print(f"Chào mừng quản trị viên {admin.full_name}!")
+            admin.view_revenue()
+
         elif choice == "4":
             print("Thoát chương trình.")
             break

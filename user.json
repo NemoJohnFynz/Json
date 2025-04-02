@@ -14,7 +14,7 @@
       "username": "tranthib",
       "password": "hashed_password",
       "balance": 50000,
-      "role": "player"
+      "role": "player"  
     },
     {
       "userId": "E001",

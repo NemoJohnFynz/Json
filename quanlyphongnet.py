@@ -84,6 +84,9 @@ class Admin(User):
 def main():
     users = load_data("user.json")
     rooms = load_data("room.json")
+    trasitions = load_data("trasition.json")
+    computers = load_data("computer.json")
+    violations = load_data("violation.json")
     
     if not users:
         print("Không có dữ liệu người chơi!")
@@ -168,7 +171,6 @@ def main():
             }
             employee = Employee(**employee)
             print(f"Chào mừng nhân viên {employee.full_name}!")
-            # Add employee-specific functionality here
 
         elif choice == "3":
             username = input("Nhập tên đăng nhập: ")

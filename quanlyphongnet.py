@@ -153,7 +153,20 @@ def main():
             if not user:
                 print("Nhân viên không tồn tại!")
                 continue
-            employee = Employee(**user)
+            password = input("Nhập mật khẩu: ")
+            if user["password"] != password:
+                print("Mật khẩu không chính xác!")
+                continue
+            employee = {
+                "user_id": user["userId"],
+                "full_name": user["fullName"],
+                "username": user["username"],
+                "password": user["password"],
+                "address": user["address"],
+                "phone": user["phone"],
+                "role": user["role"]
+            }
+            employee = Employee(**employee)
             print(f"Chào mừng nhân viên {employee.full_name}!")
 
         elif choice == "3":
@@ -162,7 +175,18 @@ def main():
             if not user:
                 print("Quản trị viên không tồn tại!")
                 continue
-            admin = Admin(**user)
+            password = input("Nhập mật khẩu: ")
+            if user["password"] != password:
+                print("Mật khẩu không chính xác!")
+                continue
+            admin ={
+                "user_id": user["userId"],
+                "full_name": user["fullName"],
+                "username": user["username"],
+                "password": user["password"],
+                "role": user["role"]
+            }
+            admin = Admin(**admin)
             print(f"Chào mừng quản trị viên {admin.full_name}!")
             admin.view_revenue()
 

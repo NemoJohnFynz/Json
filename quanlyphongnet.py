@@ -155,7 +155,6 @@ def main():
                 continue
             employee = Employee(**user)
             print(f"Chào mừng nhân viên {employee.full_name}!")
-            # Add employee-specific functionality here
 
         elif choice == "3":
             username = input("Nhập tên đăng nhập: ")

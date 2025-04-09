@@ -1,126 +1,122 @@
-{
-"computers": [
+[
     {
         "roomId": "R001",
-      "computerId": "C001",
-      "monitor": "Samsung 32 inch",
-      "cpu": "Intel i9-13900K",
-      "ram": "32GB DDR5",
-      "storage": {
-        "capacity": "1TB",
-        "type": "NVMe SSD"
-      },
-      "status": "Đang hoạt động"
+        "computerId": "C001",
+        "monitor": "Samsung 32 inch",
+        "cpu": "Intel i9-13900K",
+        "ram": "32GB DDR5",
+        "storage": {
+            "capacity": "1TB",
+            "type": "NVMe SSD"
+        },
+        "status": "Đang bảo trì"
     },
     {
         "roomId": "R002",
-      "computerId": "C003",
-      "monitor": "Samsung 32 inch",
-      "cpu": "Intel i9-13900K",
-      "ram": "32GB DDR5",
-      "storage": {
-        "capacity": "1TB",
-        "type": "NVMe SSD"
-      },
-      "status": "Đang hoạt động"
+        "computerId": "C003",
+        "monitor": "Samsung 32 inch",
+        "cpu": "Intel i9-13900K",
+        "ram": "32GB DDR5",
+        "storage": {
+            "capacity": "1TB",
+            "type": "NVMe SSD"
+        },
+        "status": "Đang hoạt động"
     },
     {
         "roomId": "R002",
-      "computerId": "C004",
-      "monitor": "Samsung 32 inch",
-      "cpu": "Intel i9-13900K",
-      "ram": "32GB DDR5",
-      "storage": {
-        "capacity": "1TB",
-        "type": "NVMe SSD"
-      },
-      "status": "Đang hoạt động"
+        "computerId": "C004",
+        "monitor": "Samsung 32 inch",
+        "cpu": "Intel i9-13900K",
+        "ram": "32GB DDR5",
+        "storage": {
+            "capacity": "1TB",
+            "type": "NVMe SSD"
+        },
+        "status": "Đang hoạt động"
     },
     {
         "roomId": "R001",
-      "computerId": "C005",
-      "monitor": "Samsung 32 inch",
-      "cpu": "Intel i9-13900K",
-      "ram": "32GB DDR5",
-      "storage": {
-        "capacity": "1TB",
-        "type": "NVMe SSD"
-      },
-      "status": "Đang hoạt động"
+        "computerId": "C005",
+        "monitor": "Samsung 32 inch",
+        "cpu": "Intel i9-13900K",
+        "ram": "32GB DDR5",
+        "storage": {
+            "capacity": "1TB",
+            "type": "NVMe SSD"
+        },
+        "status": "Đang hoạt động"
     },
     {
         "roomId": "R001",
-      "computerId": "C010",
-      "monitor": "Samsung 32 inch",
-      "cpu": "Intel i9-13900K",
-      "ram": "32GB DDR5",
-      "storage": {
-        "capacity": "1TB",
-        "type": "NVMe SSD"
-      },
-      "status": "Đang hoạt động"
+        "computerId": "C010",
+        "monitor": "Samsung 32 inch",
+        "cpu": "Intel i9-13900K",
+        "ram": "32GB DDR5",
+        "storage": {
+            "capacity": "1TB",
+            "type": "NVMe SSD"
+        },
+        "status": "Đang hoạt động"
     },
     {
         "roomId": "R001",
-      "computerId": "C002",
-      "monitor": "LG 27 inch",
-      "cpu": "AMD Ryzen 9 5900X",
-      "ram": "32GB DDR4",
-      "storage": {
-        "capacity": "512GB",
-        "type": "SSD"
-      },
-      "status": "Đang hư hỏng"
+        "computerId": "C002",
+        "monitor": "LG 27 inch",
+        "cpu": "AMD Ryzen 9 5900X",
+        "ram": "32GB DDR4",
+        "storage": {
+            "capacity": "512GB",
+            "type": "SSD"
+        },
+        "status": "Đang hư hỏng"
     },
-
-        {
-              "roomId": "R002",
-          "computerId": "C101",
-          "monitor": "Dell 24 inch",
-          "cpu": "Intel i5-12400F",
-          "ram": "16GB DDR4",
-          "storage": {
+    {
+        "roomId": "R002",
+        "computerId": "C101",
+        "monitor": "Dell 24 inch",
+        "cpu": "Intel i5-12400F",
+        "ram": "16GB DDR4",
+        "storage": {
             "capacity": "1TB",
             "type": "HDD"
-          },
-          "status": "Đang hoạt động"
         },
-        {
-            "roomId": "R001",
-          "computerId": "C101",
-          "monitor": "Dell 24 inch",
-          "cpu": "Intel i5-12400F",
-          "ram": "16GB DDR4",
-          "storage": {
+        "status": "Đang hoạt động"
+    },
+    {
+        "roomId": "R001",
+        "computerId": "C101",
+        "monitor": "Dell 24 inch",
+        "cpu": "Intel i5-12400F",
+        "ram": "16GB DDR4",
+        "storage": {
             "capacity": "1TB",
             "type": "HDD"
-          },
-          "status": "Đang hoạt động"
         },
-        {
-            "roomId": "R002",
-          "computerId": "C101",
-          "monitor": "Dell 24 inch",
-          "cpu": "Intel i5-12400F",
-          "ram": "16GB DDR4",
-          "storage": {
+        "status": "Đang hoạt động"
+    },
+    {
+        "roomId": "R002",
+        "computerId": "C101",
+        "monitor": "Dell 24 inch",
+        "cpu": "Intel i5-12400F",
+        "ram": "16GB DDR4",
+        "storage": {
             "capacity": "1TB",
             "type": "HDD"
-          },
-          "status": "Đang bảo trì"
         },
-        {
-            "roomId": "R002",
-          "computerId": "C102",
-          "monitor": "Asus 27 inch",
-          "cpu": "AMD Ryzen 5 5600X",
-          "ram": "16GB DDR4",
-          "storage": {
+        "status": "Đang bảo trì"
+    },
+    {
+        "roomId": "R002",
+        "computerId": "C102",
+        "monitor": "Asus 27 inch",
+        "cpu": "AMD Ryzen 5 5600X",
+        "ram": "16GB DDR4",
+        "storage": {
             "capacity": "500GB",
             "type": "SSD"
-          },
-          "status": "Đang hoạt động"
-        }
-      ]
-    
-}
+        },
+        "status": "Đang hoạt động"
+    }
+]

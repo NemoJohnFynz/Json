@@ -1,16 +1,22 @@
 {
     "violations": [
-    {
-      "violationId": "V001",
-      "reportedBy": "E001",
-      "violator": "U001",
-      "reason": "Sử dụng phần mềm hack"
-    },
-    {
-      "violationId": "V002",
-      "reportedBy": "E002",
-      "violator": "U002",
-      "reason": "Gây mất trật tự trong phòng net"
-    }
-  ]
+        {
+            "violationId": "V001",
+            "reportedBy": "E001",
+            "violator": "U001",
+            "reason": "Sử dụng phần mềm hack"
+        },
+        {
+            "violationId": "V002",
+            "reportedBy": "E002",
+            "violator": "U002",
+            "reason": "Gây mất trật tự trong phòng net"
+        },
+        {
+            "violationId": "V003",
+            "reportedBy": "E005",
+            "violator": 9,
+            "reason": "cài vi rút dô mày"
+        }
+    ]
 }

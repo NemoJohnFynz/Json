@@ -59,18 +59,20 @@
         "role": "admin"
     },
     {
-        "userId": 8,
-        "fullName": "phamhuutieng",
-        "username": "tien1606",
-        "password": "tien1606",
+        "userId": "E005",
+        "fullName": "nemonv",
+        "username": "nemonv",
+        "password": "nemonv",
+        "address": "277nvc",
+        "phone": "0836887911",
         "role": "employee"
     },
     {
         "userId": 9,
-        "fullName": "uchiahanemokheckhec",
-        "username": "nemo123",
-        "password": "nemo123",
+        "fullName": "nemouser",
+        "username": "nemouser",
+        "password": "nemouser",
         "balance": 0,
-        "role": "user"
+        "role": "player"
     }
 ]

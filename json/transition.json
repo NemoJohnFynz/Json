@@ -1,18 +1,30 @@
-{
-"transitions": [
-  {
-    "transactionId": "T004",
-    "userId": "U002",
-    "amount": 30000,
-    "type": "deposit",
-    "timestamp": "2025-04-02T17:00:00Z"
-  },
-  {
-    "transactionId": "T005",
-    "userId": "U003",
-    "amount": 9000000,
-    "type": "deposit",
-    "timestamp": "2025-04-02T17:00:00Z"
-  }
-  ]
-}
+[
+    {
+        "transactionId": "T004",
+        "userId": "U002",
+        "amount": 30000,
+        "type": "deposit",
+        "timestamp": "2025-04-02T17:00:00Z"
+    },
+    {
+        "transactionId": "T005",
+        "userId": "U003",
+        "amount": 9000000,
+        "type": "deposit",
+        "timestamp": "2025-04-02T17:00:00Z"
+    },
+    {
+        "transactionId": "T006",
+        "userId": "U001",
+        "amount": 1000,
+        "type": "deposit",
+        "timestamp": "2025-04-09T04:02:19.326484+00:00"
+    },
+    {
+        "transactionId": "T007",
+        "userId": "U001",
+        "amount": 90000,
+        "type": "deposit",
+        "timestamp": "2025-04-09T04:02:32.330865+00:00"
+    }
+]

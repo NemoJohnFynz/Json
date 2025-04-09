@@ -26,19 +26,24 @@ class Admin(User):
                 print(f"Vi phạm của người dùng {violator_info['fullName']} ({violator_info['username']}) - Lý do: {violation['reason']}")
             else:
                 print(f"Không tìm thấy thông tin người dùng với ID {violation['violator']}")
-
     def create_employee_account(self):
         users = load_data("user.json")
-        user_id = len(users) + 1
+
+        user_id = f"E{len([u for u in users if u['role'] == 'employee']) + 1:03d}" 
+
         full_name = input("Nhập họ và tên nhân viên: ")
         username = input("Nhập tên đăng nhập: ")
         password = input("Nhập mật khẩu: ")
+        address = input("Nhập địa chỉ nhân viên: ")
+        phone = input("Nhập số điện thoại nhân viên: ")
 
         new_employee = {
             "userId": user_id,
             "fullName": full_name,
             "username": username,
-            "password": password,
+            "password": password, 
+            "address": address,
+            "phone": phone,
             "role": "employee"
         }
 
@@ -60,7 +65,7 @@ class Admin(User):
             "username": username,
             "password": password,
             "balance": balance,
-            "role": "user"
+            "role": "player"
         }
 
         users.append(new_user)

@@ -1,0 +1,76 @@
+[
+    {
+        "userId": "U001",
+        "fullName": "Uchiha Nemo",
+        "username": "uchihanemo",
+        "password": "nemo1234",
+        "balance": 9999999999999999999999999999,
+        "role": "player"
+    },
+    {
+        "userId": "U002",
+        "fullName": "Trần Thị B",
+        "username": "tranthib",
+        "password": "hashed_password",
+        "balance": 50000,
+        "role": "player"
+    },
+    {
+        "userId": "E001",
+        "fullName": "Lê Văn C",
+        "username": "levanc",
+        "password": "hashed_password",
+        "address": "456 Đường DEF",
+        "phone": "0978234567",
+        "role": "employee"
+    },
+    {
+        "userId": "E004",
+        "fullName": "Lê Văn C",
+        "username": "levanc",
+        "password": "hashed_password",
+        "address": "456 Đường DEF",
+        "phone": "0978234567",
+        "role": "employee"
+    },
+    {
+        "userId": "E010",
+        "fullName": "Lê Văn C",
+        "username": "levanc",
+        "password": "hashed_password",
+        "address": "456 Đường DEF",
+        "phone": "0978234567",
+        "role": "employee"
+    },
+    {
+        "userId": "E002",
+        "fullName": "Nemo emloyee",
+        "username": "nemoemployee",
+        "password": "nemo1234",
+        "address": "789 Đường uchiahanemo",
+        "phone": "0965123789",
+        "role": "employee"
+    },
+    {
+        "userId": "A001",
+        "fullName": "Admin",
+        "username": "admin",
+        "password": "admin",
+        "role": "admin"
+    },
+    {
+        "userId": 8,
+        "fullName": "phamhuutieng",
+        "username": "tien1606",
+        "password": "tien1606",
+        "role": "employee"
+    },
+    {
+        "userId": 9,
+        "fullName": "uchiahanemokheckhec",
+        "username": "nemo123",
+        "password": "nemo123",
+        "balance": 0,
+        "role": "user"
+    }
+]

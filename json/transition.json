@@ -1,0 +1,18 @@
+{
+"transitions": [
+  {
+    "transactionId": "T004",
+    "userId": "U002",
+    "amount": 30000,
+    "type": "deposit",
+    "timestamp": "2025-04-02T17:00:00Z"
+  },
+  {
+    "transactionId": "T005",
+    "userId": "U003",
+    "amount": 9000000,
+    "type": "deposit",
+    "timestamp": "2025-04-02T17:00:00Z"
+  }
+  ]
+}
